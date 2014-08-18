@@ -17,6 +17,7 @@
 @property (nonatomic, setter = setEmailField:) BOOL isEmailField;
 @property (nonatomic, setter = setDateField:) BOOL isDateField;
 @property (nonatomic, setter = setTimeField:) BOOL isTimeField;
+@property (nonatomic, setter = setPhoneField:) BOOL isPhoneField;
 @property (nonatomic, readonly) BOOL isValid;
 
 - (BOOL) validate;

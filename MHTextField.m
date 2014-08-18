@@ -247,6 +247,14 @@
             _isValid = NO;
         }
     }
+    else if (_isPhoneField) {
+      // ie: 0912345678
+      NSString *phoneRegEx = @"09[0-9]{8}";
+      NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", phoneRegEx];
+      if (![phoneTest evaluateWithObject:self.text]) {
+        _isValid = NO;
+      }
+    }
     
     [self setNeedsAppearance:self];
     

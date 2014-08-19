@@ -38,6 +38,10 @@ You can directly add the `MHTextField.h` and `MHTextField.m` source files to you
 [self.textFieldForDate setDateField:YES];
 [self.textFieldForDate setDateFieldWithFormat:@"yyyy/MM/dd"];
 [self.textFieldForDate setScrollView:_scrollView];
+
+[self.textFieldForSection setRequired:YES];
+[self.textFieldForSection setInputView:_pickerView];
+[self.textFieldForSection setScrollView:_scrollView];
 ```
 
 ## License

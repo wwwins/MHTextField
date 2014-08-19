@@ -28,6 +28,17 @@ You can directly add the `MHTextField.h` and `MHTextField.m` source files to you
 2. Install the pod(s) by running `pod install`.
 3. Include MHTextField with `#import "MHTextField.h"`.
 
+### Usage
+```
+[self.textFieldForEmail setRequired:YES];
+[self.textFieldForEmail setEmailField:YES];
+[self.textFieldForEmail setScrollView:_scrollView];
+
+[self.textFieldForDate setRequired:YES];
+[self.textFieldForDate setDateField:YES];
+[self.textFieldForDate setDateFieldWithFormat:@"yyyy/MM/dd"];
+[self.textFieldForDate setScrollView:_scrollView];
+```
 
 ## License
 

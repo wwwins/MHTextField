@@ -13,6 +13,7 @@
 @property (nonatomic, strong) UIToolbar *toolbar;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) NSString *dateFormat;
+@property NSInteger maxYear;
 
 @property (nonatomic, setter = setEmailField:) BOOL isEmailField;
 @property (nonatomic, setter = setDateField:) BOOL isDateField;

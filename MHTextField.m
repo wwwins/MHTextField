@@ -159,10 +159,20 @@
 - (void) selectInputView:(UITextField *)textField{
     if (_isDateField || _isTimeField){
         UIDatePicker *datePicker = [[UIDatePicker alloc] init];
-        if (_isDateField)
+        if (_isDateField) {
             datePicker.datePickerMode = UIDatePickerModeDate;
+            if (self.maxYear>0) {
+              // limit max date
+              NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
+              NSInteger year = [dateComponents year];
+              NSDateComponents* components=[[NSDateComponents alloc] init];
+              [components setYear:year-self.maxYear];
+              datePicker.maximumDate = [[NSCalendar currentCalendar] dateFromComponents:components];
+            }
+        }
         else
             datePicker.datePickerMode = UIDatePickerModeTime;
+      
         [datePicker addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
         
         if (![textField.text isEqualToString:@""]){

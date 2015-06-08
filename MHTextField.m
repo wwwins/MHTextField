@@ -35,6 +35,8 @@
 @implementation MHTextField
 
 @synthesize required;
+@synthesize isNeedScrollToTop;
+
 @synthesize scrollView;
 @synthesize toolbar;
 @synthesize keyboardIsShown;
@@ -311,7 +313,7 @@
     NSTimeInterval duration = [[[notification userInfo] valueForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
     [UIView animateWithDuration:duration animations:^{
-        if (_isDoneCommand){
+        if (_isDoneCommand && isNeedScrollToTop){
             [self.scrollView setContentOffset:CGPointMake(0, -scrollView.contentInset.top) animated:NO];
         }
     }];

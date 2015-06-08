@@ -10,6 +10,8 @@
 @interface MHTextField : UITextField
 
 @property (nonatomic) BOOL required;
+@property (nonatomic) BOOL isNeedScrollToTop;
+
 @property (nonatomic, strong) UIToolbar *toolbar;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) NSString *dateFormat;
